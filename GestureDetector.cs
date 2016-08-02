@@ -11,6 +11,11 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
     using System.Collections.Generic;
     using Microsoft.Kinect;
     using Microsoft.Kinect.VisualGestureBuilder;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.IO;
+    using System.Collections.ObjectModel;
 
     /// <summary>
     /// Gesture Detector class which listens for VisualGestureBuilderFrame events from the service
@@ -189,6 +194,8 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                                     // update the GestureResultView object with new gesture result values
                                     this.GestureResultView.UpdateGestureResult(true, result.Detected, result.Confidence, gesture.Name);
                                     this._mongoDBRecorder.UpdateMongoDB(true, result.Detected, result.Confidence, gesture.Name);
+                                    List<int> teste = new List<int>();
+                                    teste.Add(1);
                                 }
                             }
                         }
